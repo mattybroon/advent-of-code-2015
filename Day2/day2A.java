@@ -28,18 +28,12 @@ public class day2A {
             int width = Integer.parseInt(lwh[1]);
             int height = Integer.parseInt(lwh[2]);
 
-            int lw = length*width;
-            int wh = width*height;
-            int hl = height*length;
+            int area1 = length*width;
+            int area2 = width*height;
+            int area3 = height*length;
 
-            int area = 2*(lw + wh + hl);
-            int smallest = lw;
-            if(wh < smallest){
-                smallest = wh;
-            }
-            if(hl < smallest){
-                smallest = hl;
-            }
+            int area = 2*(area1 + area2 + area3);
+            int smallest = Math.min(Math.min(area1, area2), area3);
             area += smallest;
             totalArea += area;
         }
